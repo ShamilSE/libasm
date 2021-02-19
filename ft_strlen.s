@@ -1,14 +1,12 @@
+global _ft_strlen
+
 segment .text
-	global _ft_strlen
-
-segment .data
-	mov rax, 0
-
 _ft_strlen:
+	mov rax, 0
 	jmp loop
 
 loop:
-	cmp BYTE [rdi + rax], 0
+	cmp byte [rdi + rax], 0
 	je exit
 	inc rax
 	jmp loop

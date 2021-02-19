@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-int	_ft_strlen(char *string);
+size_t	ft_strlen(const char *s);
 
 int main()
 {
 	char *string = "hello";
-	printf("%d\n", _ft_strlen(string));
+	printf("%zu\n", ft_strlen(string));
 	return 0;
 }
