@@ -18,6 +18,6 @@ int main()
 	printf("%zu\n", ft_strlen(string));
 	ft_strcpy(c_string, string);
 	printf("%s\n", c_string);
-	//printf("%d\n", ft_strcmp("hello", "hello"));
+	printf("%d\n", ft_strcmp("hell", "hel"));
 	return 0;
 }

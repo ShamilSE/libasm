@@ -13,7 +13,7 @@ loop:
 	je	exit
 	mov byte [rdi + rcx], bl ; current char to rdi str (first parameter)
 	inc rcx ; increment rcx
-	jmp loop ; next iteration
+	jmp short loop ; next iteration
     
 exit:
 	mov	byte [rdi + rcx], 0 ; null terminator
