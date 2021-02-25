@@ -16,9 +16,11 @@ $(NAME): $(SRC) main.c
 	ar rc $(NAME) $(OBJ)
 
 clean:
-	rm -rf $(NAME)
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm -rf ft_strlen.o ft_strcpy.o ft_strcmp.o ft_write.o ft_read.o ft_strdup.o
+	rm -rf $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
