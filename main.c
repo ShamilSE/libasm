@@ -19,7 +19,7 @@ int main()
 	string[4] = '!';
 	string[5] = '1';
 	printf("about ft_strlen.s\n");
-	printf("%zu\n", ft_strlen(string));
+	printf("%zu\n", ft_strlen(""));
 	printf("---------------------------\n");
 	printf("about ft_strcpy.s\n");
 	ft_strcpy(c_string, string);
@@ -29,6 +29,7 @@ int main()
 	printf("%d\n", ft_strcmp("", ""));
 	printf("---------------------------\n");
 	printf("about ft_write.s\n");
+	ft_write(1, "hello world\n", 12);
 	ft_write(-1, "hello world\n", 12);
 	printf("my error no: %d\n", errno);
 	write(-1, "hello world\n", 12);
