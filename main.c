@@ -6,11 +6,13 @@ size_t	ft_strlen(const char *s);
 char	*ft_strcpy(char *dst, const char *src);
 int		ft_strcmp(const char *s1, const char *s2);
 ssize_t	ft_write(int fildes, const void *buf, size_t nbytes);
+ssize_t	ft_read(int fildes, void *buf, size_t nbyte);
 
 int main()
 {
 	char string[7];
 	char c_string[7];
+	char buf[5];
 
 	string[0] = 'h';
 	string[1] = 'o';
@@ -35,5 +37,7 @@ int main()
 	write(-1, "hello world\n", 12);
 	printf("original error no: %d\n", errno);
 	printf("\n---------------------------\n");
+	printf("about ft_read.s\n");
+	ft_read(0, &buf, 4);
 	return 0;
 }
