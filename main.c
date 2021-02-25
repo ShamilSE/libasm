@@ -30,9 +30,9 @@ int main()
 	printf("---------------------------\n");
 	printf("about ft_write.s\n");
 	ft_write(-1, "hello world\n", 12);
-	printf("%d", errno);
+	printf("my error no: %d\n", errno);
 	write(-1, "hello world\n", 12);
-	printf("%d", errno);
+	printf("original error no: %d\n", errno);
 	printf("\n---------------------------\n");
 	return 0;
 }
