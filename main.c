@@ -1,18 +1,12 @@
-#include <stdio.h>
-#include <errno.h>
-#include <unistd.h>
-
-size_t	ft_strlen(const char *s);
-char	*ft_strcpy(char *dst, const char *src);
-int		ft_strcmp(const char *s1, const char *s2);
-ssize_t	ft_write(int fildes, const void *buf, size_t nbytes);
-ssize_t	ft_read(int fildes, void *buf, size_t nbyte);
+#include "libasm.h"
 
 int main()
 {
 	char string[7];
 	char c_string[7];
 	char buf[5];
+	char	*a;
+	char	*b;
 
 	string[0] = 'h';
 	string[1] = 'o';
@@ -39,5 +33,11 @@ int main()
 	printf("\n---------------------------\n");
 	printf("about ft_read.s\n");
 	ft_read(0, &buf, 4);
+	printf("\n---------------------------\n");
+	printf("about ft_strdup\n");
+	b = strdup("hoba2\n");
+	printf("%s\n", b);
+	a = ft_strdup("hoba\n");
+	printf("%s", a);
 	return 0;
 }
