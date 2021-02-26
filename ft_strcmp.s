@@ -6,25 +6,21 @@ _ft_strcmp:
 	jmp	loop
 
 loop:
-	cmp	byte [rdi + rcx], 0
-	je	if_rsi_null
-	cmp	byte [rsi + rcx], 0
-	je	if_rdi_null
+	mov	al, byte [rdi + rcx]
+	mov	bl, byte [rsi + rcx]
+	cmp	al, 0
+	je	exit
+	cmp	bl, 0
+	je	exit
+	cmp	al, bl
+	jne	exit
 	inc	rcx
 	jmp	short loop
 
-if_rsi_null:
-	cmp	byte [rsi + rcx], 0
-	je	equal
-	mov	rax, -1
-	ret
 
-if_rdi_null:
-	cmp	byte [rdi + rcx], 0
-	je	equal
-	mov	rax, 1
-	ret
 
-equal:
-	mov	rax, 0
+exit:
+	movzx	rax, al
+	movzx	rdx, bl
+	sub	rax, rdx
 	ret

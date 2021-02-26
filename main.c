@@ -22,7 +22,7 @@ int main()
 	printf("%s\n", c_string);
 	printf("---------------------------\n");
 	printf("about ft_strcmp.s\n");
-	printf("%d\n", ft_strcmp("", ""));
+	printf("%d\n", ft_strcmp("123", "1234"));
 	printf("---------------------------\n");
 	printf("about ft_write.s\n");
 	ft_write(1, "hello world\n", 12);
