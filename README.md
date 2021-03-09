@@ -7,3 +7,4 @@ cd libasm
 make
 ```
 теперь вы можете линковать ваши файлы с этой библиотекой (gcc, ld)
+![](additional/old_computer.png)
