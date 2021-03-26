@@ -1,5 +1,59 @@
 #include "libasm.h"
 
+t_list	*ft_lstlast(t_list *lst)
+{
+	t_list	*last;
+	t_list	*p;
+
+	last = lst;
+	p = last;
+	while (last != NULL)
+	{
+		p = last;
+		last = last->next;
+	}
+	return (p);
+}
+
+void ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*p;
+
+	if (!(*lst))
+	{
+		*lst = new;
+		return ;
+	}
+	if ((p = ft_lstlast(*lst)) != NULL)
+		p->next = new;
+}
+
+int		ft_lstsize_libft(t_list *lst)
+{
+	int		i;
+
+	i = 1;
+	if (!lst)
+		return (0);
+	while (lst->next)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
+}
+
+t_list	*ft_lstnew(void *content)
+{
+	t_list *node;
+
+	if (!(node = malloc(sizeof(t_list))))
+		return (NULL);
+	node->data = content;
+	node->next = NULL;
+	return (node);
+}
+
 int main()
 {
 	char string[7];
@@ -7,7 +61,17 @@ int main()
 	char buf[5];
 	char	*a;
 	char	*b;
+	size_t	index;
+	t_list	*test_list;
+	t_list	*out_test;
 
+	out_test = NULL;
+	index = 0;
+	while (index < 5)
+	{
+		ft_lstadd_back(&out_test, ft_lstnew("hello\n"));
+		index++;
+	}
 	string[0] = 'h';
 	string[1] = 'o';
 	string[2] = 'l';
@@ -39,5 +103,8 @@ int main()
 	printf("%s\n", b);
 	a = ft_strdup("hoba\n");
 	printf("%s", a);
+	printf("\n---------------------------\n");
+	printf("libasm: %d\n", ft_list_size(out_test));
+	printf("libft: %d\n", ft_lstsize_libft(out_test));
 	return 0;
 }
